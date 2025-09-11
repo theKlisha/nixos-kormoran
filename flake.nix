@@ -6,10 +6,12 @@
     fabric-server.url = "path:./fabric-server";
   };
 
-  outputs = { nixpkgs, fabric-server, ... }:
+  outputs =
+    { nixpkgs, fabric-server, ... }:
     let
       system = "x86_64-linux";
-    in {
+    in
+    {
       nixosConfigurations.kormoran = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [

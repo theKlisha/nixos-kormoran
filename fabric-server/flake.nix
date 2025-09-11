@@ -6,12 +6,19 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs { inherit system; };
         name = "fabric-server";
-      in {
+      in
+      {
         packages.${name} = import ./package.nix { inherit pkgs name; };
         nixosModules.${name} = import ./module.nix { inherit system self name; };
       }

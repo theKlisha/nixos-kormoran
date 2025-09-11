@@ -1,4 +1,10 @@
-{ config, pkgs, lib, modulesPath, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  modulesPath,
+  ...
+}:
 {
   imports = [
     (modulesPath + "/virtualisation/proxmox-lxc.nix")
@@ -6,7 +12,10 @@
 
   nix.settings = {
     sandbox = false;
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   proxmoxLXC = {
@@ -39,9 +48,9 @@
     enable = true;
     openFirewall = true;
     settings = {
-        PermitRootLogin = "yes";
-        PasswordAuthentication = true;
-        PermitEmptyPasswords = "yes";
+      PermitRootLogin = "yes";
+      PasswordAuthentication = true;
+      PermitEmptyPasswords = "yes";
     };
   };
 
