@@ -11,6 +11,10 @@
     "offlineSkins": {
       "url": "https://github.com/FabricMC/fabric/releases/download/0.128.2%2B1.21.5/fabric-api-0.128.2+1.21.5.jar",
       "hash": "sha256-qC/QCCcgbpEZNu0eDOrsbrVdBhyl08XWPH8AMUJtKa4="
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/xcELvp6R/lithium-fabric-0.16.3%2Bmc1.21.5.jar",
+      "hash": "sha256-ZmG1pQ+8hcYDKMaLq3Nhw69mhbSC87Mk3BDbvc9k4G0="
     }
   }
 }
