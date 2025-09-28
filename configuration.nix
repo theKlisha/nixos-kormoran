@@ -70,6 +70,8 @@
         difficulty = "hard";
         enforce-whitelist = false;
         gamemode = "survival";
+        level-seed = "3341418238313829147";
+        max-players = 1939;
         motd = "minekampf";
         online-mode = true;
         view-distance = 20;
