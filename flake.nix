@@ -3,11 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    fabric-server.url = "path:./fabric-server";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs =
-    { nixpkgs, fabric-server, ... }:
+    inputs@{
+      nixpkgs,
+      nix-minecraft,
+      ...
+    }:
     let
       system = "x86_64-linux";
     in
@@ -16,7 +20,12 @@
         inherit system;
         modules = [
           ./configuration.nix
-          fabric-server.nixosModules.${system}.fabric-server
+          nix-minecraft.nixosModules.minecraft-servers
+          {
+            nixpkgs.overlays = [
+              inputs.nix-minecraft.overlay
+            ];
+          }
         ];
       };
     };
