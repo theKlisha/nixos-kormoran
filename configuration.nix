@@ -65,6 +65,7 @@
     servers.fabric = {
       enable = true;
       package = pkgs.fabricServers.fabric-1_21_7;
+      jvmOpts = "-Xmx16G -Xms4G";
 
       serverProperties = {
         difficulty = "hard";
